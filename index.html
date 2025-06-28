@@ -19,7 +19,7 @@
                     <div class="input-fields">
                         <div class="input-package">
                             <label for="movie-name">Movie Title:</label>
-                            <input type="text" id="movie-name"> 
+                            <input type="text" id="movie-name" placeholder="Movie title"> 
                         </div>
     
                         <div class="input-package">
@@ -27,7 +27,7 @@
                             <select id="movie-genre" name="genre">
                                 <option value="Action">Action</option>
                                 <option value="Animation">Animation</option>
-                                <option value="wComedy">Comedy</option>
+                                <option value="Comedy">Comedy</option>
                                 <option value="Drama">Drama</option>
                                 <option value="Fantasy">Fantasy</option>
                                 <option value="History">History</option>
@@ -60,21 +60,23 @@
                     <div class="sort" id="sort">
                         <p>Sort by: </p>
                         <form>
-                            <input type="radio" name="sort" value="title" id="sort-title">
+                            <input type="radio" name="sort" value="title" id="sort-title" selected onchange="sortWishList('title')">
                             <label for="sort-title">Title</label>
-                            <input type="radio" name="sort" value="rating" id="sort-rating">
+                            <input type="radio" name="sort" value="rating" id="sort-rating" onchange="sortWishList('rating')">
                             <label for="sort-rating">Rating</label>
+                            <input type="radio" name="sort" value="genre" id="sort-genre" onchange="sortWishList('genre')">
+                            <label for="sort-genre">Genre</label>
                         </form>
                     </div>
                     
                     <div class="filter" id="filter">
                         <form>
                     <label for="filter-genre">Filter by Genre: </label>
-                    <select id="filter-genre" name="filter-genre">
+                    <select id="filter-genre" name="filter-genre" onchange="filterWishList(this.value)">
                         <option value="All Genres">All Genres</option>
                         <option value="Action">Action</option>
                         <option value="Animation">Animation</option>
-                        <option value="wComedy">Comedy</option>
+                        <option value="Comedy">Comedy</option>
                         <option value="Drama">Drama</option>
                         <option value="Fantasy">Fantasy</option>
                         <option value="History">History</option>

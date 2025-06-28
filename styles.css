@@ -1,10 +1,13 @@
 :root {
     --background: #181818;
-    --secondary-background: #424242;
+    --secondary-background: #292929;
     --main-text: #F7F7F7;
     --accent1: #ff4722;
     --accent2: #8d4ff8;
-    --hover: #ffeb3b
+    --hover: #ffeb3b;
+    --input-bkg: #222;
+    --input-bdr: #ccc;
+    --input-txt: #555 
 }
 
 nav {
@@ -12,8 +15,11 @@ nav {
     margin: 0px;
     padding-top: 20px;
     padding-bottom: 10px;
-    font-size: 1.5em;
     text-align: center;
+}
+nav h1 {
+    font-size: 4em;
+    margin: 0px 0px 20px 0px;
 }
 
 body {
@@ -33,7 +39,7 @@ body {
 .movie-container {
     background-color: var(--secondary-background);
     width: 70%;
-    padding: 5px 0px 10px 0px;
+    padding: 5px 0px 40px 0px;
 }
 .movie-container .movie-table {
     justify-content: center;
@@ -56,11 +62,38 @@ body {
     padding-bottom: 40px;
     margin: 5px;
 }
-.new-movie h2 { display: flex; align-items: center; justify-content: center; font-size: 2em; margin: 20px 0px 25px 0px;}
-.new-movie form .input-fields{ 
-    display: grid;
-    grid-template-columns: 33% 34% 33%;
+.new-movie button {
+    background-color: var(--input-bkg);
+    border: 2px solid var(--input-bdr);
+    border-radius: 5px;
 }
+.new-movie h2 { display: flex; align-items: center; justify-content: center; font-size: 2em; margin: 20px 0px 25px 0px;}
+.input-fields{ 
+    display: grid;
+    grid-template-columns: 37% 37% 26%;
+    place-items: center;
+}
+
+
+.input-package input[type="text"] {
+    height: 100%;
+    border-radius: 5px;
+    border: 2px solid var(--input-bdr);
+    background-color: var(--input-bkg);
+    color: var(--input-txt);
+    font-size: 1.15em;
+    width: 250px;
+}
+.input-package select {
+    font-size: 1.15em;
+    width: 250px;
+    height: 40px;
+    background-color: var(--input-bkg);
+    border: 2px solid var(--input-bdr);
+    border-radius: 5px;
+    color: var(--input-txt);
+}
+
 .input-package {
     font-size: 1.5em;
     display: flex;
@@ -78,26 +111,38 @@ body {
     justify-content: center; 
     align-items: center;
     text-align: center; 
-    color: var(--accent1); 
+    color: white; 
     font-weight: bold; 
     height: 50px;
     font-size: 1.5em;
     border-radius: 7px;
+    transition: 0.1s ease-out;
 }
+.new-movie form button:hover { background-color: var(--accent2); }
 
 .movie-card {
-    background-color: var(--accent2);
+    background-color: var(--input-bkg);
     width: 300px;
+    height: fit-content;
     border-radius: 10px;
     margin-top: 10px;
     margin-bottom: 5px;
     padding: 4px 20px 7px 20px;
+    transition: 0.3s ease-out;
 }
 
 .movie-card h2 { margin: 4px; color: var(--accen1); }
-.movie-card p { margin-top: 5px; margin-bottom: 10px; }
-.movie-card .rating { background-color: var(--accent1); border-radius: 5px; padding: 2px 4px 2px 4px; }
+.movie-card p { margin-top: 5px; margin-bottom: 12px; }
+.movie-card .rating { 
+    background-color: var(--accent1); 
+    border-radius: 5px; 
+    font-size: 1.05em; 
+    padding: 2px 10px 2px 10px; 
+}
 
+.movie-card:hover {
+    background-color: var(--accent2);
+}
 
 .modify-movie-display {
     display: flex;
@@ -118,10 +163,10 @@ body {
 .sort label {   /* makes the labels look like the buttons */
     padding: 6px 12px;
     font-size: 1.15em;
-    border: 2px solid #555;
     border-radius: 4px;
-    background-color: #222;
-    color: #ccc;
+    border: 2px solid var(--input-bdr);
+    background-color: var(--input-bkg);
+    color: var(--input-txt);
     transition: all 0.2s ease;
     width: 250px;
     height: 40px;
@@ -142,18 +187,23 @@ body {
     font-size: 1.15em;
     width: 250px;
     height: 40px;
-    background-color: #222;
-    border: 2px solid #727272;
+    background-color: var(--input-bkg);
+    border: 2px solid var(--input-bdr);
     border-radius: 5px;
-    color: #ccc;
+    color: white;
 }
 
 
 .empty-wishlist {
-    padding:20px;
+    padding: 20px;
     margin-left: auto;
     margin-right: auto;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    border: 1px solid var(--input-bdr);
+    border-radius: 10px;
 }
-.empty-wishlist h1 { color: var(--accent1);}
+.empty-wishlist h1 { 
+    color: var(--accent1);
+}
