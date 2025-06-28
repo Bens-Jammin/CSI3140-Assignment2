@@ -1,0 +1,159 @@
+:root {
+    --background: #181818;
+    --secondary-background: #424242;
+    --main-text: #F7F7F7;
+    --accent1: #ff4722;
+    --accent2: #8d4ff8;
+    --hover: #ffeb3b
+}
+
+nav {
+    background-color: var(--secondary-background);
+    margin: 0px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+body {
+    padding: 0px;
+    margin: 0px;
+    background-color: var(--background);
+    color: var(--main-text);
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.movie-container {
+    background-color: var(--secondary-background);
+    width: 70%;
+    padding: 5px 0px 10px 0px;
+}
+.movie-container .movie-table {
+    justify-content: center;
+    align-items: center;
+}
+
+.movie-table {
+    display: grid;
+    padding-left:  10px;
+    padding-right: 10px;
+    grid-template-columns: 30% 30% 30%;
+}
+
+.movie-table-label {margin-left: 45px;}
+
+
+.new-movie {
+    background-color: var(--secondary-background);
+    width: 70%;
+    padding-bottom: 40px;
+    margin: 5px;
+}
+.new-movie h2 { display: flex; align-items: center; justify-content: center; font-size: 2em; margin: 20px 0px 25px 0px;}
+.new-movie form .input-fields{ 
+    display: grid;
+    grid-template-columns: 33% 34% 33%;
+}
+.input-package {
+    font-size: 1.5em;
+    display: flex;
+    margin: 20px 10px 35px 10px;
+    justify-content: center;
+    align-items: center;
+}
+.input-package label { padding-right: 8px; }
+
+.new-movie form button { 
+    display: flex; 
+    width: 90%; 
+    margin-left: auto; 
+    margin-right: auto; 
+    justify-content: center; 
+    align-items: center;
+    text-align: center; 
+    color: var(--accent1); 
+    font-weight: bold; 
+    height: 50px;
+    font-size: 1.5em;
+    border-radius: 7px;
+}
+
+.movie-card {
+    background-color: var(--accent2);
+    width: 300px;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    padding: 4px 20px 7px 20px;
+}
+
+.movie-card h2 { margin: 4px; color: var(--accen1); }
+.movie-card p { margin-top: 5px; margin-bottom: 10px; }
+.movie-card .rating { background-color: var(--accent1); border-radius: 5px; padding: 2px 4px 2px 4px; }
+
+
+.modify-movie-display {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.sort {
+    padding: 20px;
+    font-size: 1.2em;
+    display: flex;
+    align-items: center;
+}
+.sort p { padding-right: 4px; }
+
+.sort input[type="radio"] { display: none; } /* hides the radio buttons / cirlces themselves */
+
+.sort label {   /* makes the labels look like the buttons */
+    padding: 6px 12px;
+    font-size: 1.15em;
+    border: 2px solid #555;
+    border-radius: 4px;
+    background-color: #222;
+    color: #ccc;
+    transition: all 0.2s ease;
+    width: 250px;
+    height: 40px;
+}
+.sort input[type="radio"]:checked + label {
+    background-color: var(--accent2);
+    color: white;
+    border-color: white;
+}
+
+.filter {
+    padding: 20px;
+    font-size: 1.2em;
+    display: flex;
+    align-items: center;
+}
+.filter select {
+    font-size: 1.15em;
+    width: 250px;
+    height: 40px;
+    background-color: #222;
+    border: 2px solid #727272;
+    border-radius: 5px;
+    color: #ccc;
+}
+
+
+.empty-wishlist {
+    padding:20px;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    align-items: center;
+}
+.empty-wishlist h1 { color: var(--accent1);}

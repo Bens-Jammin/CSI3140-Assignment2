@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <link rel="stylesheet" href="./styles.css">
+        <script type="text/javascript" src="./scripts.js"></script>
+    </head>
+
+    <body>
+        <nav>
+            <h1>Movie Rating Website</h1>
+            <button type="button" onclick="clearWatchlist()">Clear data (debug only)</button>
+        </nav>
+
+        <div class="content">
+            <div class="new-movie">
+                <h2>Add a Movie</h2>
+                <form id="new-movie" onsubmit="newMovie(event)">
+                    <div class="input-fields">
+                        <div class="input-package">
+                            <label for="movie-name">Movie Title:</label>
+                            <input type="text" id="movie-name"> 
+                        </div>
+    
+                        <div class="input-package">
+                            <label for="movie-genre">Genre: </label>
+                            <select id="movie-genre" name="genre">
+                                <option value="Action">Action</option>
+                                <option value="Animation">Animation</option>
+                                <option value="wComedy">Comedy</option>
+                                <option value="Drama">Drama</option>
+                                <option value="Fantasy">Fantasy</option>
+                                <option value="History">History</option>
+                                <option value="Horror">Horror</option>
+                                <option value="Romance">Romance</option>
+                                <option value="Science Fiction">Science Fiction</option>
+                                <option value="Thriller">Thriller</option>
+                                <option value="Western">Western</option>
+                            </select>
+                        </div>
+    
+                        <div class="input-package">
+                        <label for="rating">Rating: </label>
+                            <input type="radio" name="rating" id="movie-rating1" value="1">
+                            <input type="radio" name="rating" id="movie-rating2" value="2">
+                            <input type="radio" name="rating" id="movie-rating3" value="3">
+                            <input type="radio" name="rating" id="movie-rating4" value="4">
+                            <input type="radio" name="rating" id="movie-rating5" value="5"> 
+                        </div>
+                    </div>
+
+                    <button type="submit">Submit</button>
+                </form>
+
+            </div>
+
+
+            <div class="movie-container">
+                <div class="modify-movie-display" id="mod-movies">
+                    <div class="sort" id="sort">
+                        <p>Sort by: </p>
+                        <form>
+                            <input type="radio" name="sort" value="title" id="sort-title">
+                            <label for="sort-title">Title</label>
+                            <input type="radio" name="sort" value="rating" id="sort-rating">
+                            <label for="sort-rating">Rating</label>
+                        </form>
+                    </div>
+                    
+                    <div class="filter" id="filter">
+                        <form>
+                    <label for="filter-genre">Filter by Genre: </label>
+                    <select id="filter-genre" name="filter-genre">
+                        <option value="All Genres">All Genres</option>
+                        <option value="Action">Action</option>
+                        <option value="Animation">Animation</option>
+                        <option value="wComedy">Comedy</option>
+                        <option value="Drama">Drama</option>
+                        <option value="Fantasy">Fantasy</option>
+                        <option value="History">History</option>
+                        <option value="Horror">Horror</option>
+                        <option value="Romance">Romance</option>
+                        <option value="Science Fiction">Science Fiction</option>
+                        <option value="Thriller">Thriller</option>
+                        <option value="Western">Western</option>
+                    </select>
+                        </form>
+                    </div>
+                </div>
+                <hr style="width: 90%">
+                <div class="movie-table-label" id="movie-table-label">
+                    <h1>Wishlisted Movies</h1>
+                </div>
+                <div class="movie-table" id="movie-table"></div>
+            </div>
+        </div>
+    </body>
+</html>
