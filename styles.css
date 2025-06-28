@@ -16,6 +16,8 @@ nav {
     padding-top: 20px;
     padding-bottom: 10px;
     text-align: center;
+    color: #ff4722;
+    font-size: 1.25em;
 }
 nav h1 {
     font-size: 4em;
@@ -39,7 +41,7 @@ body {
 .movie-container {
     background-color: var(--secondary-background);
     width: 70%;
-    padding: 5px 0px 40px 0px;
+    padding: 5px 0px 20px 0px;
 }
 .movie-container .movie-table {
     justify-content: center;
@@ -204,6 +206,6 @@ body {
     border: 1px solid var(--input-bdr);
     border-radius: 10px;
 }
-.empty-wishlist h1 { 
-    color: var(--accent1);
-}
+
+.empty-wishlist p  { font-size: 1.1em; }
+.empty-wishlist h1 { color: var(--accent1); font-size: 2.3em; } /* not actually doubling the size ? idk whats goin on :(y */

@@ -7,7 +7,7 @@ function noMoviesDiv() {
     // grid spot , so the first empty div takes up the first spot, putting the info in the second spot
     return `<div></div><div class=empty-wishlist>
         <h1>Your wishlist is empty!</h1>
-        <p>add a movie to your wishlist above to see your wishlist here!</p>
+        <p>Add a movie to your wishlist above to see your wishlist here!</p>
     </div>`
 }
 
