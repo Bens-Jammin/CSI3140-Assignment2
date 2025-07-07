@@ -13,13 +13,13 @@
         </nav>
 
         <div class="content">
-            <div class="new-movie">
+            <div class="new-movie movie-form">
                 <h2>Add a Movie</h2>
                 <form id="new-movie" onsubmit="newMovie(event)">
                     <div class="input-fields">
                         <div class="input-package">
                             <label for="movie-name">Movie Title:</label>
-                            <input type="text" id="movie-name" placeholder="Movie title"> 
+                            <input type="text" id="movie-name" placeholder="Movie title" required> 
                         </div>
     
                         <div class="input-package">
@@ -39,21 +39,19 @@
                             </select>
                         </div>
     
-                        <div class="input-package">
-                        <label for="rating">Rating: </label>
-                            <input type="radio" name="rating" id="movie-rating1" value="1">
-                            <input type="radio" name="rating" id="movie-rating2" value="2">
-                            <input type="radio" name="rating" id="movie-rating3" value="3">
-                            <input type="radio" name="rating" id="movie-rating4" value="4">
-                            <input type="radio" name="rating" id="movie-rating5" value="5"> 
+                        <div class="input-package" onclick="updateRating(event, 'new')" onmouseover="ratingButtonHovered(event, 'new')" onmouseout="resetRatingHover('new')">
+                            <span>Rating: </span>
+                            <button id="movie-rating1" class="rating-button star">★</button>
+                            <button id="movie-rating2" class="rating-button star">★</button>
+                            <button id="movie-rating3" class="rating-button star">★</button>
+                            <button id="movie-rating4" class="rating-button star">★</button>
+                            <button id="movie-rating5" class="rating-button star">★</button>
                         </div>
                     </div>
 
-                    <button type="submit">Submit</button>
+                    <button type="submit" class="submit-button">Submit</button>
                 </form>
-
             </div>
-
 
             <div class="movie-container">
                 <div class="modify-movie-display" id="mod-movies">
@@ -93,8 +91,9 @@
                 <div class="movie-table-label" id="movie-table-label">
                     <h1>Wishlisted Movies</h1>
                 </div>
-                <div class="movie-table" id="movie-table"></div>
+                <div class="movie-table" id="movie-table" onclick="editMovie(event)"></div>
             </div>
         </div>
+        <dialog id="editMovieModal"></dialog>
     </body>
 </html>
