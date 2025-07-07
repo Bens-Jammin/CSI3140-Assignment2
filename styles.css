@@ -4,10 +4,11 @@
     --main-text: #F7F7F7;
     --accent1: #ff4722;
     --accent2: #8d4ff8;
+    --accent3: #20c997;
     --hover: #ffeb3b;
     --input-bkg: #222;
     --input-bdr: #ccc;
-    --input-txt: #555 
+    --input-txt: #555;
 }
 
 nav {
@@ -16,9 +17,10 @@ nav {
     padding-top: 20px;
     padding-bottom: 10px;
     text-align: center;
-    color: #ff4722;
+    color: var(--accent1);
     font-size: 1.25em;
 }
+
 nav h1 {
     font-size: 4em;
     margin: 0px 0px 20px 0px;
@@ -29,6 +31,21 @@ body {
     margin: 0px;
     background-color: var(--background);
     color: var(--main-text);
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+dialog {
+    color: inherit;
+    background-color: var(--secondary-background);
+    border: 0;
+}
+
+::backdrop {
+    background-color: var(--secondary-background);
+    opacity: 0.8;
 }
 
 .content {
@@ -43,39 +60,51 @@ body {
     width: 70%;
     padding: 5px 0px 20px 0px;
 }
-.movie-container .movie-table {
-    justify-content: center;
-    align-items: center;
-}
 
-.movie-table {
-    display: grid;
+.movie-container .movie-table {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
     padding-left:  10px;
     padding-right: 10px;
-    grid-template-columns: 30% 30% 30%;
 }
 
 .movie-table-label {margin-left: 45px;}
 
+.edit-movie {
+    margin: 0;
+}
 
-.new-movie {
+.movie-form {
     background-color: var(--secondary-background);
-    width: 70%;
-    padding-bottom: 40px;
     margin: 5px;
 }
-.new-movie button {
+
+.movie-form button {
     background-color: var(--input-bkg);
     border: 2px solid var(--input-bdr);
     border-radius: 5px;
 }
-.new-movie h2 { display: flex; align-items: center; justify-content: center; font-size: 2em; margin: 20px 0px 25px 0px;}
-.input-fields{ 
-    display: grid;
-    grid-template-columns: 37% 37% 26%;
-    place-items: center;
+
+.movie-form h2 { 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    margin: 20px 0px 25px 0px;
 }
 
+.new-movie {
+    width: 70%;
+    padding-bottom: 40px;
+}
+
+.input-fields { 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
 
 .input-package input[type="text"] {
     height: 100%;
@@ -86,6 +115,7 @@ body {
     font-size: 1.15em;
     width: 250px;
 }
+
 .input-package select {
     font-size: 1.15em;
     width: 250px;
@@ -99,17 +129,15 @@ body {
 .input-package {
     font-size: 1.5em;
     display: flex;
-    margin: 20px 10px 35px 10px;
+    margin: 20px 10px;
     justify-content: center;
     align-items: center;
 }
+
 .input-package label { padding-right: 8px; }
 
-.new-movie form button { 
-    display: flex; 
-    width: 90%; 
-    margin-left: auto; 
-    margin-right: auto; 
+.movie-form form button { 
+    display: flex;
     justify-content: center; 
     align-items: center;
     text-align: center; 
@@ -120,26 +148,103 @@ body {
     border-radius: 7px;
     transition: 0.1s ease-out;
 }
-.new-movie form button:hover { background-color: var(--accent2); }
+
+.edit-movie .modal-buttons {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.edit-movie .modal-buttons button {
+    width: 100%;
+    margin: 1rem 2rem;
+}
+
+.new-movie form .submit-button { 
+    width: 90%; 
+    margin-left: auto; 
+    margin-right: auto; 
+}
+
+.movie-form form .submit-button:hover { 
+    background-color: var(--accent2); 
+}
+
+.movie-form form .rating-button { 
+    border: 0;
+    background-color: transparent;
+}
+
+.star {
+    font-size: 1.5rem;
+    color: var(--input-txt);
+}
+
+button.star:hover, .star.active { 
+    color: #ffdd00;
+}
 
 .movie-card {
     background-color: var(--input-bkg);
     width: 300px;
     height: fit-content;
     border-radius: 10px;
-    margin-top: 10px;
-    margin-bottom: 5px;
-    padding: 4px 20px 7px 20px;
+    margin: 10px 5px;
+    padding: 5px 5px 10px 20px;
     transition: 0.3s ease-out;
 }
 
 .movie-card h2 { margin: 4px; color: var(--accen1); }
 .movie-card p { margin-top: 5px; margin-bottom: 12px; }
-.movie-card .rating { 
+.movie-card .genre-tag { 
     background-color: var(--accent1); 
     border-radius: 5px; 
     font-size: 1.05em; 
     padding: 2px 10px 2px 10px; 
+}
+
+.movie-card .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.movie-card .icons {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.movie-card .icon-container {
+    background-color: var(--secondary-background);
+    border-radius: 50%;
+    height: 2rem;
+    width: 2rem;
+    color: #fff;
+    border: 0;
+}
+
+.movie-card #edit:hover, .movie-card #edit.active {
+    background-color: var(--hover);
+    color: #000;
+}
+
+.movie-card #remove:hover, .movie-card #remove.active {
+    background-color: var(--accent1);
+    color: #000;
+}
+
+.movie-card #watched:hover, .movie-card #watched.active {
+    background-color: var(--accent3);
+    color: #000;
+}
+
+.movie-card #watched {
+    margin: 0 8px;
+}
+
+.movie-card .rating {
+    margin-bottom: 0.5rem;
 }
 
 .movie-card:hover {
@@ -170,6 +275,7 @@ body {
     background-color: var(--input-bkg);
     color: var(--input-txt);
     transition: all 0.2s ease;
+    margin:0px;
     width: 250px;
     height: 40px;
 }
@@ -195,7 +301,6 @@ body {
     color: white;
 }
 
-
 .empty-wishlist {
     padding: 20px;
     margin-left: auto;
@@ -208,4 +313,4 @@ body {
 }
 
 .empty-wishlist p  { font-size: 1.1em; }
-.empty-wishlist h1 { color: var(--accent1); font-size: 2.3em; } /* not actually doubling the size ? idk whats goin on :(y */
+.empty-wishlist h1 { color: var(--accent1); font-size: 2.3em; }
