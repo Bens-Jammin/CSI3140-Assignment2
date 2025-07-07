@@ -266,6 +266,10 @@ button.star:hover, .star.active {
 .sort p { padding-right: 4px; }
 
 .sort input[type="radio"] { display: none; } /* hides the radio buttons / cirlces themselves */
+.sort label:hover { 
+    color: white;
+    border-color: white;
+}
 
 .sort label {   /* makes the labels look like the buttons */
     padding: 6px 12px;
